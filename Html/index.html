@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Happy Birthday ❤️</title>
+
+    <style>
+        body {
+            text-align: center;
+            background: #ffe6f2;
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #ff0066;
+            font-size: 32px;
+        }
+
+        .pic {
+            width: 260px;
+            border-radius: 12px;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        #message {
+            font-size: 18px;
+            margin: 20px auto;
+            width: 85%;
+            color: #444;
+        }
+
+        button {
+            padding: 12px 24px;
+            border: none;
+            background: #ff4d79;
+            color: white;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="title">Happy Birthday, My Love ❤️</h1>
+
+    <img id="photo" class="pic"
+         src="Sana.jpg">
+
+    <p id="message">
+        Wishing you the happiest birthday! You mean everything to me. ❤️
+    </p>
+
+    <button id="play">Play Song 🎵</button>
+
+    <audio id="music"
+        src="AA.mp3">
+    </audio>
+
+    <script>
+        // ⭐ CHANGE THESE ONLY ⭐
+        const gfName = "SAHINA ZAMAN";
+        const message = "Happy Birthday, my love ❤️You are my today, my tomorrow, and every dream I see.You are the reason behind my smile,the reason I want to be better,and the reason love feels real to me.Sorry for let wishes my Love💝.This is the first Birthday wish from my site for other(You)❤️";
+        const songURL = "AA.mp3";
+
+        // Apply changes
+        document.getElementById("title").textContent =
+            `Happy Birthday, ${gfName} ❤️`;
+
+        document.getElementById("message").textContent = message;
+        document.getElementById("music").src = songURL;
+
+        // ⭐ SIMPLE SLIDESHOW ⭐
+        const photos = [
+            "Sana1.jpg",
+            "Sana2.jpg",
+            "Sana3.jpg",
+            "Sana4.jpg",
+            "Sana5.jpg",
+            "Sana6.jpg"
+        ];
+
+        let index = 0;
+
+        setInterval(() => {
+            index = (index + 1) % photos.length;
+            document.getElementById("photo").src = photos[index];
+        }, 2000); // changes every 2 seconds
+
+        // Play button
+        const music = document.getElementById("music");
+        const btn = document.getElementById("play");
+
+        btn.onclick = () => {
+            music.play();
+            btn.textContent = "Playing... 🎶";
+        };
+    </script>
+
+</body>
+</html>
